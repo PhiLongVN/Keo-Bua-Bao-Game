@@ -1,0 +1,249 @@
+body {
+  background: #192648;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+/* ============================================ */
+/*                 .TITLE-BLOCK                 */
+/* ============================================ */
+.title-block {
+  width: 90%;
+  max-width: 500px;
+  padding: 1rem;
+
+  border: 2px solid rgba(255, 255, 255, 0.642);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  //   .block-name
+  .block-name {
+    span {
+      display: block;
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 0.9;
+    }
+  }
+
+  //   .block-score
+  .block-score {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    span {
+      color: #929fd2;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .score {
+      width: 50px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+}
+
+/* ============================================ */
+/*                 .CHOOSE-BLOCK                */
+/* ============================================ */
+.choose-block {
+  padding: 1rem;
+  margin: 5rem 0;
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .step-1 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+    background-image: url(../images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .hand {
+    width: 130px;
+    height: 130px;
+    border-radius: 100rem;
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0px 8px 2px rgba(0, 0, 0, 0.222);
+    cursor: pointer;
+    position: absolute;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  //   1
+  .bao {
+    box-shadow: 0px 5px 0px #2945c1;
+    border: 15px solid #536fee;
+    top: -10%;
+    left: -10%;
+  }
+  //   2
+  .keo {
+    box-shadow: 0px 5px 0px #c76c1b;
+    border: 15px solid #eba117;
+    right: -10%;
+    top: -10%;
+  }
+  //   3
+  .bua {
+    box-shadow: 0px 5px 0px #9e132f;
+    border: 15px solid #df405e;
+    bottom: -10%;
+    left: calc(50% - 65px);
+  }
+}
+
+/* ============================================ */
+/*                  .RULE-BLOCK                 */
+/* ============================================ */
+.rule-block {
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 0.5rem 2rem;
+  color: white;
+
+  &:hover {
+    color: red;
+    border: 2px solid red;
+  }
+}
+
+/* ============================================ */
+/*                  .RULE-TABLE                 */
+/* ============================================ */
+.rule-table {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  padding: 1rem;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.376);
+
+  .wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .rule-name {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .delete {
+        font-size: 2rem;
+        opacity: 0.7;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/* ============================================ */
+/*                    RESULT                    */
+/* ============================================ */
+
+.your-choose {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+
+  width: 100%;
+
+  .pick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .handd {
+      width: 130px;
+      height: 130px;
+      border-radius: 100rem;
+      background: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-shadow: inset 0px 8px 2px rgba(0, 0, 0, 0.222);
+      cursor: pointer;
+    }
+
+    span {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+  .RESULT {
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}

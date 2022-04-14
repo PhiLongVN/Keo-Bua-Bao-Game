@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="./style/main.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <!-- Score Rules You Picked The House Picked You Win You Lose Play Again -->
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 30px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-block">
+        <div class="block-name">
+          <span>ROCK</span>
+          <span>PAPER</span>
+          <span>SCISSORS</span>
+        </div>
+
+        <div class="block-score">
+          <span>SCORE</span>
+          <p class="score">0</p>
+        </div>
+      </div>
+
+      <div class="choose-block">
+        <div class="step-1">
+          <div class="hand bao">
+            <img class="choose" data-id="1" src="./images/icon-paper.svg" alt="" />
+          </div>
+
+          <div class="hand keo">
+            <img class="choose" data-id="2" src="./images/icon-scissors.svg" alt="" />
+          </div>
+
+          <div class="hand bua">
+            <img class="choose" data-id="3" src="./images/icon-rock.svg" alt="" />
+          </div>
+        </div>
+
+        <!-- step 2 -->
+
+        <!-- <div class="your-choose">
+          <div class="pick you-pick">
+            <span>YOU PICK</span>
+            <div class="handd">
+              <img src="" alt="" />
+            </div>
+          </div>
+
+          <div class="RESULT">
+            <span></span>
+            <button>PLAY AGAIN</button>
+          </div>
+
+          <div class="pick house-pick">
+            <span>THE HOUSE PICK</span>
+            <div class="handd house">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="rule-block">RULES</div>
+
+      <div class="rule-table">
+        <div class="wrapper">
+          <div class="title">
+            <span class="rule-name">RULES</span>
+            <span class="delete">X</span>
+          </div>
+          <img src="./images/image-rules.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Huynh Phi Long</a>.
+      </div>
+    </div>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
