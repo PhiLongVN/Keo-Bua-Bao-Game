@@ -70,6 +70,7 @@ body {
           flex-direction: column;
   margin-top: 3rem;
   min-height: 100vh;
+  max-width: 1440px;
 }
 
 /* ============================================ */
@@ -142,6 +143,7 @@ body {
   margin: 5rem 0;
   width: 90%;
   height: 332px;
+  max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
