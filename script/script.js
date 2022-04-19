@@ -1,6 +1,7 @@
 const rule = document.querySelector('.rule-block');
 const ruleTable = document.querySelector('.rule-table');
 const deletebt = document.querySelector('.delete');
+const choose = ['rock', 'scissors', 'paper'];
 
 /* ============================================ */
 /*                    TOGGLE                    */
@@ -19,100 +20,83 @@ deletebt.onclick = () => {
 
 const hands = document.querySelectorAll('.hand');
 const chooseBlock = document.querySelector('.choose-block');
+const step1 = document.querySelector('.step-1');
+const step2 = document.querySelector('.step-2');
 
 hands.forEach((hand) => {
-  hand.addEventListener('click', handleChoose);
+  hand.addEventListener('click', () => {
+    let selection = hand.dataset.select;
+    let selectionCOM = randomSelection();
+
+    step1.style.display = 'none';
+    step2.style.display = 'flex';
+
+    createSelection(selection, selectionCOM);
+    setTimeout(() => {
+      checkWinner(selection, selectionCOM);
+    }, 1000);
+  });
 });
 
-function handleChoose(e) {
-  let target = e.target.dataset.id;
-  createBLock(target);
-  //   handleResponsive(target);
+const handCom = document.querySelector('.hand-com');
+const handUser = document.querySelector('.hand-user');
+
+function createSelection(selection, selectionCOM) {
+  // user
+  handUser.className = `handd hand-user ${selection}`;
+  handUser.querySelector('img').src = `./images/icon-${selection}.svg`;
+
+  // computer
+  setTimeout(() => {
+    handCom.className = `handd hand-com ${selectionCOM}`;
+    handCom.querySelector('img').src = `./images/icon-${selectionCOM}.svg`;
+  }, 1000);
 }
 
-function createBLock(targer) {
-  console.log('createBLock -> target', typeof targer);
-  switch (targer) {
-    case '1':
-      console.log('aaa');
-      chooseBlock.innerHTML = `<div class="your-choose">
-        <div class="pick you-pick">
-        <span>YOU PICK</span>
-        <div class="handd">
-            <img src="./images/icon-paper.svg" alt="" />
-        </div>
-        </div>
+function randomSelection() {
+  let selection = choose[Math.floor(Math.random() * choose.length)];
+  return selection;
+}
 
-        <div class="RESULT">
-        <span></span>
-        <button>PLAY AGAIN</button>
-        </div>
+const resultBlock = document.querySelector('.RESULT');
+const result = document.querySelector('.RESULT span');
 
-        <div class="pick house-pick">
-        <span>THE HOUSE PICK</span>
-        <div class="handd house">
-            <img src="" alt="" />
-        </div>
-        </div>
-        </div>`;
-      break;
-    case '2':
-      console.log('sss');
-      chooseBlock.innerHTML = `<div class="your-choose">
-        <div class="pick you-pick">
-        <span>YOU PICK</span>
-        <div class="handd">
-            <img src="./images/icon-scissors.svg" alt="" />
-        </div>
-        </div>
-
-        <div class="RESULT">
-        <span></span>
-        <button>PLAY AGAIN</button>
-        </div>
-
-        <div class="pick house-pick">
-        <span>THE HOUSE PICK</span>
-        <div class="handd house">
-            <img src="" alt="" />
-        </div>
-        </div>
-        </div>`;
-      break;
-    case '3':
-      console.log('aaaawwww');
-      chooseBlock.innerHTML = `<div class="your-choose">
-        <div class="pick you-pick">
-        <span>YOU PICK</span>
-        <div class="handd">
-            <img src="./images/icon-rock.svg" alt="" />
-        </div>
-        </div>
-
-        <div class="RESULT">
-        <span></span>
-        <button>PLAY AGAIN</button>
-        </div>
-
-        <div class="pick house-pick">
-        <span>THE HOUSE PICK</span>
-        <div class="handd house">
-            <img src="" alt="" />
-        </div>
-        </div>
-        </div>`;
-      break;
+function checkWinner(selection, selectionCOM) {
+  if (selection == selectionCOM) {
+    result.innerHTML = 'IT IS TIE';
+  } else if (
+    (selection == 'rock' && selectionCOM == 'scissors') ||
+    (selection == 'paper' && selectionCOM == 'rock') ||
+    (selection == 'scissors' && selectionCOM == 'paper')
+  ) {
+    result.innerHTML = 'YOU WIN';
+    handleScore(1);
+  } else {
+    result.innerHTML = 'YOU LOSE';
+    handleScore(-1);
   }
+
+  resultBlock.style.display = 'flex';
+  playAgain();
 }
 
-// function handleResponsive(target) {
-//   let num = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+function playAgain() {
+  const Again = document.querySelector('.RESULT button');
 
-//   switch (num) {
-//     case 1:
-//       break;
+  Again.onclick = () => {
+    step1.style.display = 'flex';
+    step2.style.display = 'none';
+    resultBlock.style.display = 'none';
+    handCom.querySelector('img').src = '';
+    handCom.className = `handd hand-com `;
+  };
+}
 
-//     default:
-//       break;
-//   }
-// }
+let score = 0;
+const scoreBlock = document.querySelector('.score');
+
+function handleScore(point) {
+  score += point;
+  scoreBlock.innerText = score;
+  
+}

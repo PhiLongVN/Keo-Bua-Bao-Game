@@ -68,6 +68,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 3rem;
   min-height: 100vh;
 }
 
@@ -140,6 +141,7 @@ body {
   padding: 1rem;
   margin: 5rem 0;
   width: 90%;
+  height: 332px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,9 +151,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .choose-block .step-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   width: 300px;
   height: 300px;
@@ -296,10 +302,8 @@ body {
 /* ============================================ */
 /*                    RESULT                    */
 /* ============================================ */
-.your-choose {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.step-2 {
+  display: none;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -307,10 +311,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
+  position: absolute;
   width: 100%;
+  top: 0%;
 }
 
-.your-choose .pick {
+.step-2 .pick {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,7 +333,7 @@ body {
   gap: 2rem;
 }
 
-.your-choose .pick .handd {
+.step-2 .pick .handd {
   width: 130px;
   height: 130px;
   border-radius: 100rem;
@@ -346,49 +352,138 @@ body {
   cursor: pointer;
 }
 
-.your-choose .pick span {
+.step-2 .pick .paper {
+  -webkit-box-shadow: 0px 5px 0px #2945c1;
+          box-shadow: 0px 5px 0px #2945c1;
+  border: 15px solid #536fee;
+}
+
+.step-2 .pick .scissors {
+  -webkit-box-shadow: 0px 5px 0px #c76c1b;
+          box-shadow: 0px 5px 0px #c76c1b;
+  border: 15px solid #eba117;
+}
+
+.step-2 .pick .rock {
+  -webkit-box-shadow: 0px 5px 0px #9e132f;
+          box-shadow: 0px 5px 0px #9e132f;
+  border: 15px solid #df405e;
+}
+
+.step-2 .pick span {
   color: white;
   font-size: 1.2rem;
 }
 
-.your-choose .RESULT button {
+.step-2 .RESULT {
+  margin-top: 3rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.step-2 .RESULT span {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.step-2 .RESULT button {
+  width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.your-choose .RESULT button:hover {
+.step-2 .RESULT button:hover {
   color: red;
 }
 
 @media screen and (max-width: 424.98px) {
   .choose-block {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 250px;
   }
   .choose-block .hand {
     width: 110px;
     height: 110px;
   }
+  .choose-block .bao {
+    left: -10%;
+    top: 5%;
+  }
+  .choose-block .keo {
+    right: -10%;
+    top: 5%;
+  }
   .choose-block .bua {
     left: calc(50% - 55px);
+    bottom: 10%;
+  }
+  /* ------------------- STEP2 ------------------ */
+  .step-2 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .step-2 .handd {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .step-2 .RESULT {
+    text-align: center;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+  }
+  .rule-block {
+    margin-top: 5rem;
   }
 }
 
 @media screen and (max-width: 319.98px) {
   .choose-block {
-    width: 190px;
+    width: 260px;
     height: 190px;
   }
   .choose-block .hand {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+  }
+  .choose-block .hand img {
+    width: 60%;
+    height: 60%;
   }
   .choose-block .bua {
-    left: calc(50% - 50px);
+    left: calc(50% - 45px);
   }
   .title-block .block-score {
     padding: 1rem 1rem;
+  }
+  .step-2 {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0;
+  }
+  .step-2 .handd {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  .step-2 .pick span {
+    font-size: 0.9rem;
+  }
+  .step-2 .RESULT {
+    margin-top: -0rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -8,6 +8,7 @@ body {
   justify-content: center;
   flex-direction: column;
 
+  margin-top: 3rem;
   min-height: 100vh;
 }
 
@@ -72,12 +73,15 @@ body {
   padding: 1rem;
   margin: 5rem 0;
   width: 90%;
+  height: 332px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   .step-1 {
+    display: flex;
     position: relative;
     width: 300px;
     height: 300px;
@@ -201,13 +205,15 @@ body {
 /*                    RESULT                    */
 /* ============================================ */
 
-.your-choose {
-  display: flex;
+.step-2 {
+  display: none;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
 
+  position: absolute;
   width: 100%;
+  top: 0%;
 
   .pick {
     display: flex;
@@ -215,6 +221,7 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
+    
 
     .handd {
       width: 130px;
@@ -230,6 +237,22 @@ body {
       cursor: pointer;
     }
 
+    //   1
+    .paper {
+      box-shadow: 0px 5px 0px #2945c1;
+      border: 15px solid #536fee;
+    }
+    //   2
+    .scissors {
+      box-shadow: 0px 5px 0px #c76c1b;
+      border: 15px solid #eba117;
+    }
+    //   3
+    .rock {
+      box-shadow: 0px 5px 0px #9e132f;
+      border: 15px solid #df405e;
+    }
+
     span {
       color: white;
       font-size: 1.2rem;
@@ -237,7 +260,19 @@ body {
   }
 
   .RESULT {
+    margin-top: 3rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    span {
+      color: white;
+      font-size: 2.5rem;
+    }
+
     button {
+      width: 100%;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       cursor: pointer;

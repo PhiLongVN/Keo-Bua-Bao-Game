@@ -1,37 +1,90 @@
 @media screen and (max-width: 424.98px) {
   .choose-block {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 250px;
 
     .hand {
       width: 110px;
       height: 110px;
     }
+    .bao {
+      left: -10%;
+      top: 5%;
+    }
 
+    .keo {
+      right: -10%;
+      top: 5%;
+    }
     .bua {
       left: calc(50% - 55px);
+      bottom: 10%;
     }
+  }
+
+  /* ------------------- STEP2 ------------------ */
+  .step-2 {
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .handd {
+      transform: scale(0.8);
+    }
+
+    .RESULT {
+      text-align: center;
+      order: 3;
+      width: 100%;
+    }
+  }
+
+  .rule-block {
+    margin-top: 5rem;
   }
 }
 
 @media screen and (max-width: 319.98px) {
   .choose-block {
-    width: 190px;
+    width: 260px;
     height: 190px;
 
     .hand {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
+      img {
+        width: 60%;
+        height: 60%;
+      }
     }
 
     .bua {
-      left: calc(50% - 50px);
+      left: calc(50% - 45px);
     }
   }
 
   .title-block {
     .block-score {
       padding: 1rem 1rem;
+    }
+  }
+
+  .step-2 {
+    width: 100%;
+    justify-content: center;
+    gap: 0;
+
+    .handd {
+      transform: scale(0.7);
+    }
+
+    .pick {
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    .RESULT {
+      margin-top: -0rem;
     }
   }
 }
