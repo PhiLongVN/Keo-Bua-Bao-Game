@@ -10,11 +10,6 @@
   margin: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   line-height: 1.5;
@@ -61,6 +56,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .container {
@@ -77,7 +73,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 3rem;
+  position: relative;
   min-height: 100vh;
   max-width: 1440px;
 }
@@ -89,6 +85,7 @@ body {
   width: 90%;
   max-width: 500px;
   padding: 1rem;
+  margin-top: 3rem;
   border: 2px solid rgba(255, 255, 255, 0.642);
   border-radius: 10px;
   display: -webkit-box;
@@ -149,7 +146,8 @@ body {
 /* ============================================ */
 .choose-block {
   padding: 1rem;
-  margin: 5rem 0;
+  margin: 2rem 0;
+  margin-top: 5rem;
   width: 90%;
   height: 332px;
   max-width: 1000px;
@@ -172,15 +170,15 @@ body {
   position: relative;
   width: 300px;
   height: 300px;
-  background-image: url(../images/bg-triangle.svg);
+  background-image: url(../images/bg-pentagon.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
 .choose-block .hand {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 100rem;
   background: white;
   display: -webkit-box;
@@ -207,16 +205,16 @@ body {
   -webkit-box-shadow: 0px 5px 0px #2945c1;
           box-shadow: 0px 5px 0px #2945c1;
   border: 15px solid #536fee;
-  top: -10%;
-  left: -10%;
+  top: 15%;
+  left: -15%;
 }
 
 .choose-block .keo {
   -webkit-box-shadow: 0px 5px 0px #c76c1b;
           box-shadow: 0px 5px 0px #c76c1b;
   border: 15px solid #eba117;
-  right: -10%;
-  top: -10%;
+  right: -15%;
+  top: 15%;
 }
 
 .choose-block .bua {
@@ -224,7 +222,23 @@ body {
           box-shadow: 0px 5px 0px #9e132f;
   border: 15px solid #df405e;
   bottom: -10%;
-  left: calc(50% - 65px);
+  left: -0%;
+}
+
+.choose-block .lan {
+  -webkit-box-shadow: 0px 5px 0px #5e37a9;
+          box-shadow: 0px 5px 0px #5e37a9;
+  border: 15px solid #8957e5;
+  bottom: -10%;
+  right: -0%;
+}
+
+.choose-block .hai {
+  -webkit-box-shadow: 0px 5px 0px #2e8ea9;
+          box-shadow: 0px 5px 0px #2e8ea9;
+  border: 15px solid #3eb8cf;
+  top: -15%;
+  left: calc(50% - 60px);
 }
 
 /* ============================================ */
@@ -248,8 +262,8 @@ body {
 /* ============================================ */
 .rule-table {
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  min-height: 100%;
   top: 0;
   padding: 1rem;
   display: none;
@@ -381,13 +395,26 @@ body {
   border: 15px solid #df405e;
 }
 
+.step-2 .pick .lizard {
+  -webkit-box-shadow: 0px 5px 0px #5e37a9;
+          box-shadow: 0px 5px 0px #5e37a9;
+  border: 15px solid #8957e5;
+}
+
+.step-2 .pick .spock {
+  -webkit-box-shadow: 0px 5px 0px #2e8ea9;
+          box-shadow: 0px 5px 0px #2e8ea9;
+  border: 15px solid #3eb8cf;
+}
+
 .step-2 .pick span {
   color: white;
   font-size: 1.2rem;
 }
 
 .step-2 .RESULT {
-  margin-top: 3rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -428,15 +455,24 @@ body {
   }
   .choose-block .bao {
     left: -10%;
-    top: 5%;
+    top: 25%;
   }
   .choose-block .keo {
     right: -10%;
-    top: 5%;
+    top: 25%;
   }
   .choose-block .bua {
+    right: 0%;
+    left: unset;
+    bottom: -5%;
+  }
+  .choose-block .lan {
+    left: 0%;
+    bottom: -5%;
+  }
+  .choose-block .hai {
     left: calc(50% - 55px);
-    bottom: 10%;
+    top: -5%;
   }
   /* ------------------- STEP2 ------------------ */
   .step-2 {
@@ -464,6 +500,7 @@ body {
   .choose-block {
     width: 260px;
     height: 190px;
+    margin-top: 6rem;
   }
   .choose-block .hand {
     width: 90px;
@@ -473,8 +510,9 @@ body {
     width: 60%;
     height: 60%;
   }
-  .choose-block .bua {
+  .choose-block .hai {
     left: calc(50% - 45px);
+    top: -5%;
   }
   .title-block .block-score {
     padding: 1rem 1rem;
@@ -494,7 +532,7 @@ body {
     font-size: 0.9rem;
   }
   .step-2 .RESULT {
-    margin-top: -0rem;
+    margin-top: 0rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

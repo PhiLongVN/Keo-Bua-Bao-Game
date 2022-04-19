@@ -9,16 +9,27 @@
     }
     .bao {
       left: -10%;
-      top: 5%;
+      top: 25%;
     }
 
     .keo {
       right: -10%;
-      top: 5%;
+      top: 25%;
     }
     .bua {
+      right: 0%;
+      left: unset;
+      bottom: -5%;
+    }
+
+    .lan {
+      left: 0%;
+      bottom: -5%;
+    }
+
+    .hai {
       left: calc(50% - 55px);
-      bottom: 10%;
+      top: -5%;
     }
   }
 
@@ -47,6 +58,7 @@
   .choose-block {
     width: 260px;
     height: 190px;
+    margin-top: 6rem;
 
     .hand {
       width: 90px;
@@ -57,8 +69,9 @@
       }
     }
 
-    .bua {
+    .hai {
       left: calc(50% - 45px);
+      top: -5%;
     }
   }
 
@@ -84,7 +97,7 @@
     }
 
     .RESULT {
-      margin-top: -0rem;
+      margin-top: 0rem;
     }
   }
 }

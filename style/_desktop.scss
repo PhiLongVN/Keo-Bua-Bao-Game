@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .container {
@@ -11,8 +12,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 
-  margin-top: 3rem;
   min-height: 100vh;
   max-width: 1440px;
 }
@@ -24,6 +25,7 @@ body {
   width: 90%;
   max-width: 500px;
   padding: 1rem;
+  margin-top: 3rem;
 
   border: 2px solid rgba(255, 255, 255, 0.642);
   border-radius: 10px;
@@ -76,7 +78,8 @@ body {
 /* ============================================ */
 .choose-block {
   padding: 1rem;
-  margin: 5rem 0;
+  margin: 2rem 0;
+  margin-top: 5rem;
   width: 90%;
   height: 332px;
   max-width: 1000px;
@@ -92,15 +95,15 @@ body {
     width: 300px;
     height: 300px;
 
-    background-image: url(../images/bg-triangle.svg);
+    background-image: url(../images/bg-pentagon.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
   }
 
   .hand {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     border-radius: 100rem;
     background: white;
 
@@ -121,22 +124,37 @@ body {
   .bao {
     box-shadow: 0px 5px 0px #2945c1;
     border: 15px solid #536fee;
-    top: -10%;
-    left: -10%;
+    top: 15%;
+    left: -15%;
   }
   //   2
   .keo {
     box-shadow: 0px 5px 0px #c76c1b;
     border: 15px solid #eba117;
-    right: -10%;
-    top: -10%;
+    right: -15%;
+    top: 15%;
   }
   //   3
   .bua {
     box-shadow: 0px 5px 0px #9e132f;
     border: 15px solid #df405e;
     bottom: -10%;
-    left: calc(50% - 65px);
+    left: -0%;
+  }
+
+  // 4
+  .lan {
+    box-shadow: 0px 5px 0px #5e37a9;
+    border: 15px solid #8957e5;
+    bottom: -10%;
+    right: -0%;
+  }
+  // 5
+  .hai {
+    box-shadow: 0px 5px 0px #2e8ea9;
+    border: 15px solid #3eb8cf;
+    top: -15%;
+    left: calc(50% - 60px);
   }
 }
 
@@ -161,8 +179,8 @@ body {
 /* ============================================ */
 .rule-table {
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  min-height: 100%;
   top: 0;
   padding: 1rem;
 
@@ -257,7 +275,16 @@ body {
       box-shadow: 0px 5px 0px #9e132f;
       border: 15px solid #df405e;
     }
-
+    // 4
+    .lizard {
+      box-shadow: 0px 5px 0px #5e37a9;
+      border: 15px solid #8957e5;
+    }
+    // 5
+    .spock {
+      box-shadow: 0px 5px 0px #2e8ea9;
+      border: 15px solid #3eb8cf;
+    }
     span {
       color: white;
       font-size: 1.2rem;
@@ -265,7 +292,8 @@ body {
   }
 
   .RESULT {
-    margin-top: 3rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
     display: none;
     align-items: center;
     justify-content: center;

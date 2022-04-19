@@ -1,7 +1,38 @@
 const rule = document.querySelector('.rule-block');
 const ruleTable = document.querySelector('.rule-table');
 const deletebt = document.querySelector('.delete');
-const choose = ['rock', 'scissors', 'paper'];
+const choose = [
+  // rock:
+  {
+    name: 'rock',
+    lose: ['paper', 'spock'],
+    beat: ['lizard', 'scissors'],
+  },
+  // paper:
+  {
+    name: 'paper',
+    lose: ['lizard', 'scissors'],
+    beat: ['rock', 'spock'],
+  },
+  // scissors:
+  {
+    name: 'scissors',
+    lose: ['spock', 'rock'],
+    beat: ['lizard', 'paper'],
+  },
+  // lizard:
+  {
+    name: 'lizard',
+    lose: ['scissors', 'rock'],
+    beat: ['spock', 'paper'],
+  },
+  // spock:
+  {
+    name: 'spock',
+    lose: ['lizard', 'paper'],
+    beat: ['rock', 'scissors'],
+  },
+];
 
 /* ============================================ */
 /*                    TOGGLE                    */
@@ -23,6 +54,7 @@ const chooseBlock = document.querySelector('.choose-block');
 const step1 = document.querySelector('.step-1');
 const step2 = document.querySelector('.step-2');
 
+/* -------------- CLICK SELECTION ------------- */
 hands.forEach((hand) => {
   hand.addEventListener('click', () => {
     let selection = hand.dataset.select;
@@ -38,6 +70,7 @@ hands.forEach((hand) => {
   });
 });
 
+/* ------------- CREATE SELECTION ------------- */
 const handCom = document.querySelector('.hand-com');
 const handUser = document.querySelector('.hand-user');
 
@@ -48,11 +81,12 @@ function createSelection(selection, selectionCOM) {
 
   // computer
   setTimeout(() => {
-    handCom.className = `handd hand-com ${selectionCOM}`;
-    handCom.querySelector('img').src = `./images/icon-${selectionCOM}.svg`;
+    handCom.className = `handd hand-com ${selectionCOM.name}`;
+    handCom.querySelector('img').src = `./images/icon-${selectionCOM.name}.svg`;
   }, 1000);
 }
 
+/* ------------------ RANDOM ------------------ */
 function randomSelection() {
   let selection = choose[Math.floor(Math.random() * choose.length)];
   return selection;
@@ -61,14 +95,11 @@ function randomSelection() {
 const resultBlock = document.querySelector('.RESULT');
 const result = document.querySelector('.RESULT span');
 
+/* --------------- CHECK WINNER --------------- */
 function checkWinner(selection, selectionCOM) {
-  if (selection == selectionCOM) {
+  if (selection == selectionCOM.name) {
     result.innerHTML = 'IT IS TIE';
-  } else if (
-    (selection == 'rock' && selectionCOM == 'scissors') ||
-    (selection == 'paper' && selectionCOM == 'rock') ||
-    (selection == 'scissors' && selectionCOM == 'paper')
-  ) {
+  } else if (selectionCOM.lose.includes(selection)) {
     result.innerHTML = 'YOU WIN';
     handleScore(1);
   } else {
@@ -80,6 +111,7 @@ function checkWinner(selection, selectionCOM) {
   playAgain();
 }
 
+/* ----------------- PLAY AGAIN ---------------- */
 function playAgain() {
   const Again = document.querySelector('.RESULT button');
 
@@ -98,5 +130,4 @@ const scoreBlock = document.querySelector('.score');
 function handleScore(point) {
   score += point;
   scoreBlock.innerText = score;
-  
 }
